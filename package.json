@@ -1,0 +1,28 @@
+{
+  "name": "agentrelay",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Project continuity foundation for coding agents",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts",
+    "migrate": "node -r dotenv/config ./node_modules/node-pg-migrate/bin/node-pg-migrate.js up",
+    "migrate:down": "node -r dotenv/config ./node_modules/node-pg-migrate/bin/node-pg-migrate.js down",
+    "test": "node -r dotenv/config --import tsx --test test/*.test.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "@types/pg": "^8.11.10",
+    "node-pg-migrate": "^7.9.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
